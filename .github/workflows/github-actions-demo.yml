@@ -1,12 +1,21 @@
-name: learn-github-actions
-on: [push]
+name: flake8 Lint
+
+on: [push, pull_request]
+
 jobs:
-  check-bats-version:
+  flake8-lint:
     runs-on: ubuntu-latest
+    name: Lint
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up Python environment
+        uses: actions/setup-python@v1
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          python-version: "3.8"
+      - name: flake8 Lint
+        uses: py-actions/flake8@v1
+        with:
+          ignore: "F401"
+          exclude: "src/ignoreme.py"
+          max-line-length: "79"
