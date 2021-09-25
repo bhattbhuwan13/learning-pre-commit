@@ -12,3 +12,6 @@ def new(strin="hi"):
 
 def check(i=1, j=2):
     print(i, j)
+
+def new_one(st= 'right'):
+    print(st+'hi')
