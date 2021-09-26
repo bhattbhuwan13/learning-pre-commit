@@ -10,4 +10,4 @@ repos:
 -   repo: https://github.com/timothycrosley/isort
     rev: 5.7.0
     hooks:
-    -   id: isort
+    - id: isort
