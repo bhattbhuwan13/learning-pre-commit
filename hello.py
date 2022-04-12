@@ -15,7 +15,7 @@ def check(i=1, j=2):
 
 
 def new_one(st="right"):
-    print(st + "hi")
+    print(f"{st}hi")
 
 
 def error_func(t="dfjkj"):
